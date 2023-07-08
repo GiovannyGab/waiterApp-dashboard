@@ -1,11 +1,14 @@
-import { useState } from 'react'
-
-import './App.css'
+import Header from "./components/Header/Header"
+import { GlobalStyles } from "./styles/GlobalStyles"
 
 function App() {
 
   return (
-    <p>Hello</p>
+    <>
+      <GlobalStyles/>
+   <Header/>
+    </>
+
   )
 }
 
