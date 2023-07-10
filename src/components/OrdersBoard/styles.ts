@@ -1,13 +1,4 @@
-import { styled } from "styled-components";
-
-export const Container = styled.div`
-width: 100%;
-max-width: 1216px;
-display: flex;
-flex-direction: row;
-margin: 40px auto;
-gap: 32px;
-`
+import { styled } from "styled-components"
 
 export const Board = styled.div`
 flex: 1;

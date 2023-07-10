@@ -1,16 +1,24 @@
-import { Container,Board } from "./styles";
+import OrderBoard from "../OrdersBoard/orderBoard";
+import { Container,} from "./styles";
 
 export default function Orders(){
 
   return(
     <Container>
-    <Board>
-    <header>
-      <span>⏱</span>
-      <strong>Fila de espera</strong>
-      <span>(1)</span>
-    </header>
-    </Board>
+
+    <OrderBoard
+    icon="⏱"
+    title= "Fila de Espera"
+    quantity="3"
+    />
+    <OrderBoard
+     icon="👩‍🍳"
+     title= "Em Preparo"
+     quantity="3"/>
+    <OrderBoard
+     icon="✅"
+     title= "Pronto"
+     quantity="3"/>
     </Container>
   )
 }
