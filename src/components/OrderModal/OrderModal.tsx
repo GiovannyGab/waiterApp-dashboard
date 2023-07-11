@@ -1,27 +1,40 @@
-import { Container, Overlay } from "./styles";
+import { Container, OrderDetails, Overlay } from "./styles";
 import closeIcon from '../../assets/images/close-icon.svg'
+import { Order } from "../../types/Order";
 interface OrderModalProps{
   visible: boolean
+  order: Order | null
 }
-export default function OrderModal ({visible}:OrderModalProps){
-  if(!visible){
+export default function OrderModal ({visible,order}:OrderModalProps){
+  if(!visible || !order){
     return null
   }
   return(
 <Overlay>
   <Container>
     <header>
-      <strong>Mesa 2</strong>
+      <strong>Mesa {order.table}</strong>
       <button type="button"><img src={closeIcon} alt="close-icon"/></button>
     </header>
 
     <div className="status-container">
       <small>Status do Pedido</small>
       <div>
-        <span>⏱</span>
-        <strong>Fila De Espera</strong>
+        <span>{order.status === "WAITING" &&"⏱"}
+        {order.status === "IN_PRODUCTION" &&"👩‍🍳"}
+        {order.status === "DONE" &&"✅"}
+        </span>
+        <strong>
+        {order.status === "WAITING" &&"Fila De Espera"}
+        {order.status === "IN_PRODUCTION" &&"Em Produção"}
+        {order.status === "DONE" &&"Pronto"}
+        </strong>
       </div>
     </div>
+    <OrderDetails>
+    <strong>Itens</strong>
+
+    </OrderDetails>
   </Container>
 </Overlay>
 

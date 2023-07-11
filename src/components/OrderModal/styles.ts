@@ -45,3 +45,11 @@ header{
   }
 }
 `
+export const OrderDetails = styled.div`
+margin-top: 32px;
+> strong{
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+`
