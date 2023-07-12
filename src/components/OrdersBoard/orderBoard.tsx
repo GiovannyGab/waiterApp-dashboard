@@ -16,9 +16,14 @@ export default function OrderBoard({icon,title,orders}:OrderBoardProps){
  setIsModalVisible(true)
 setselectedOrder(order)
   }
+  function handleCloseModal(){
+    setIsModalVisible(false)
+    setselectedOrder(null)
+  }
   return(
     <Board>
       <OrderModal
+      onClose={handleCloseModal}
       visible={isModalvisible}
       order={selectedOrder}
       />
